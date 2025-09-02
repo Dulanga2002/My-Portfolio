@@ -1,0 +1,41 @@
+.footer {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 30px 0;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright p {
+  margin-bottom: 0;
+}
+
+.social {
+  display: flex;
+  gap: 15px;
+}
+
+.social a {
+  color: var(--white);
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.social a:hover {
+  color: var(--primary-light);
+  transform: translateY(-3px);
+}
+
+@media screen and (max-width: 576px) {
+  .content {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

@@ -1,0 +1,44 @@
+/* Global CSS Variables */
+:root {
+  /* Colors */
+  --primary-color: #4a6cf7;
+  --primary-dark: #3756d5;
+  --primary-light: #6f8af9;
+  --secondary-color: #25282b;
+  --text-color: #333;
+  --text-light: #767676;
+  --white: #ffffff;
+  --light-bg: #f8f9fa;
+  --dark-bg: #1a1a1a;
+  --border-color: #e9e9e9;
+  --box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  
+  /* Typography */
+  --font-family: 'Poppins', sans-serif;
+  --heading-font-weight: 700;
+  --body-font-weight: 400;
+  
+  /* Spacing */
+  --section-padding: 100px 0;
+  --container-padding: 0 15px;
+  
+  /* Transitions */
+  --transition: all 0.3s ease;
+  
+  /* Border Radius */
+  --border-radius-sm: 5px;
+  --border-radius: 10px;
+  --border-radius-lg: 20px;
+}
+
+/* Dark Mode Variables (for future implementation) */
+[data-theme="dark"] {
+  --primary-color: #6f8af9;
+  --secondary-color: #f8f9fa;
+  --text-color: #e9e9e9;
+  --text-light: #b4b4b4;
+  --light-bg: #1a1a1a;
+  --dark-bg: #111111;
+  --border-color: #333333;
+  --box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
