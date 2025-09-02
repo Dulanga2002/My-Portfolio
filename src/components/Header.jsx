@@ -12,6 +12,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
+        <img src="/src/assets/images/profile.png" alt="Dulanga Nikeshala" className={styles.logoImage} />
         <h2>Dulanga Nikeshala</h2>
       </div>
       
