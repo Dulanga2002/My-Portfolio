@@ -39,14 +39,19 @@
 
 .profileImage {
   width: 300px;
-  height: 300px;
-  border-radius: 50%;
+  height: 350px; /* Adjusted height to better fit the image proportions */
+  border-radius: 10px;
   background-color: #ddd;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  object-fit: cover;
+  object-position: center top; /* Position adjusted to focus on face */
   box-shadow: var(--box-shadow);
   border: 5px solid var(--white);
+  transition: transform 0.3s ease;
+}
+
+.profileImage:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .textContent {

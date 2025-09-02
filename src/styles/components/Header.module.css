@@ -15,6 +15,18 @@
 
 .logo {
   padding-left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logoImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid var(--primary-color);
 }
 
 .logo h2 {
