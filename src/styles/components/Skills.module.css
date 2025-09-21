@@ -12,27 +12,11 @@
 
 .title {
   text-align: center;
-<<<<<<< HEAD
-  margin-bottom: 10px;
-=======
   font-size: 2.5rem;
   font-weight: 700;
   color: #1e293b;
   margin-bottom: 60px;
->>>>>>> be1e16fb6105a3f8311ab8f20008c008a2f94eab
   position: relative;
-  font-size: 2.5rem;
-  color: var(--text-color);
-}
-
-.subtitle {
-  text-align: center;
-  color: var(--text-light);
-  margin-bottom: 50px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1.1rem;
 }
 
 .title::after {
@@ -47,56 +31,6 @@
   border-radius: 2px;
 }
 
-<<<<<<< HEAD
-.skillsContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  gap: 40px;
-}
-
-.skillCategory {
-  background-color: var(--white);
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  padding: 25px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #f0f0f0;
-}
-
-.skillCategory:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.categoryHeader {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.categoryIcon {
-  font-size: 1.8rem;
-  color: var(--primary-color);
-  margin-right: 15px;
-  background-color: rgba(var(--primary-rgb), 0.1);
-  padding: 10px;
-  border-radius: 10px;
-  width: 25px;
-  height: 25px;
-}
-
-.skillCategory h3 {
-  color: var(--text-color);
-  font-size: 1.3rem;
-  margin: 0;
-}
-
-.categoryDescription {
-  color: var(--text-light);
-  margin-bottom: 20px;
-  font-size: 0.95rem;
-  padding-left: 50px;
-=======
 /* Education Section */
 .educationSection {
   margin-bottom: 60px;
@@ -120,7 +54,6 @@
   bottom: -8px;
   left: 0;
   border-radius: 2px;
->>>>>>> be1e16fb6105a3f8311ab8f20008c008a2f94eab
 }
 
 .educationGrid {
@@ -130,98 +63,6 @@
   margin-bottom: 40px;
 }
 
-<<<<<<< HEAD
-.skillItem {
-  background-color: var(--light-bg);
-  padding: 15px 20px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  border: 1px solid #f0f0f0;
-}
-
-.skillItem:hover {
-  background-color: #f9f9f9;
-  transform: translateX(5px);
-}
-
-.skillInfo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.skillNameWrapper {
-  display: flex;
-  align-items: center;
-}
-
-.skillIcon {
-  margin-right: 10px;
-  color: var(--primary-color);
-  font-size: 1.2rem;
-}
-
-.skillName {
-  font-weight: 500;
-  color: var(--text-color);
-  font-size: 1rem;
-}
-
-.skillLevel {
-  display: flex;
-  align-items: center;
-}
-
-.levelBadge {
-  padding: 3px 10px;
-  border-radius: 20px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.expert {
-  background-color: rgba(76, 175, 80, 0.15);
-  color: #2e7d32;
-}
-
-.advanced {
-  background-color: rgba(33, 150, 243, 0.15);
-  color: #1565c0;
-}
-
-.intermediate {
-  background-color: rgba(255, 193, 7, 0.15);
-  color: #ff8f00;
-}
-
-.beginner {
-  background-color: rgba(244, 67, 54, 0.15);
-  color: #c62828;
-}
-
-.progressBar {
-  width: 100%;
-  height: 6px;
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-.progress {
-  height: 100%;
-  background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
-  border-radius: 3px;
-  transition: width 1.5s ease-in-out;
-}
-
-@media screen and (max-width: 992px) {
-  .skillsContainer {
-    grid-template-columns: 1fr;
-  }
-=======
 .educationCard {
   background: white;
   padding: 30px;
@@ -241,7 +82,6 @@
   right: 0;
   height: 4px;
   background: linear-gradient(135deg, #3b82f6, #8b5cf6);
->>>>>>> be1e16fb6105a3f8311ab8f20008c008a2f94eab
 }
 
 .educationCard:hover {
@@ -411,46 +251,6 @@
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-<<<<<<< HEAD
-  .skillCategory {
-    padding: 20px;
-  }
-  
-  .categoryIcon {
-    font-size: 1.5rem;
-    padding: 8px;
-  }
-  
-  .skillCategory h3 {
-    font-size: 1.2rem;
-  }
-  
-  .categoryDescription {
-    padding-left: 40px;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .title {
-    font-size: 2rem;
-  }
-  
-  .subtitle {
-    font-size: 1rem;
-  }
-  
-  .skillItem {
-    padding: 12px 15px;
-  }
-  
-  .skillName {
-    font-size: 0.9rem;
-  }
-  
-  .levelBadge {
-    font-size: 0.65rem;
-    padding: 2px 8px;
-=======
   .skills {
     padding: 60px 0;
   }
@@ -499,6 +299,5 @@
   
   .educationCard, .skillCategory, .achievementCard {
     padding: 15px;
->>>>>>> be1e16fb6105a3f8311ab8f20008c008a2f94eab
   }
 }
