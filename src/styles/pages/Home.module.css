@@ -10,6 +10,7 @@
   padding: 80px 20px;
   position: relative;
   overflow: hidden;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
 .hero::before {
@@ -21,6 +22,7 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.3);
   z-index: 1;
+  animation: gradientMove 8s ease-in-out infinite alternate;
 }
 
 .heroContent {
@@ -33,10 +35,14 @@
   position: relative;
   z-index: 2;
   width: 100%;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 1.2s ease-out forwards 0.5s;
 }
 
 .heroText {
   color: white;
+  animation: fadeIn 1.5s ease-in-out forwards;
 }
 
 .roleTag {
@@ -49,6 +55,8 @@
   font-weight: 500;
   margin-bottom: 20px;
   backdrop-filter: blur(10px);
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards 0.8s;
 }
 
 .heroTitle {
@@ -57,6 +65,8 @@
   line-height: 1.2;
   margin-bottom: 20px;
   color: white;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards 1s;
 }
 
 .nameHighlight {
@@ -71,6 +81,8 @@
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 20px;
   font-weight: 500;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards 1.2s;
 }
 
 .heroDescription {
@@ -79,12 +91,16 @@
   line-height: 1.6;
   margin-bottom: 40px;
   max-width: 600px;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards 1.4s;
 }
 
 .heroButtons {
   display: flex;
   gap: 20px;
   align-items: center;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards 1.6s;
 }
 
 .primaryButton {
@@ -99,10 +115,11 @@
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(116, 185, 255, 0.4);
+  animation: pulse 2s infinite;
 }
 
 .primaryButton:hover {
-  transform: translateY(-3px);
+  transform: translateY(-3px) scale(1.05);
   box-shadow: 0 8px 25px rgba(116, 185, 255, 0.6);
 }
 
@@ -122,13 +139,15 @@
 .secondaryButton:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-3px);
+  transform: translateY(-3px) scale(1.05);
 }
 
 .heroImage {
   position: relative;
   display: flex;
   justify-content: center;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards 2s;
 }
 
 .profileImage {
@@ -139,13 +158,47 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   object-fit: cover;
   transition: all 0.3s ease;
+  animation: float 6s ease-in-out infinite;
 }
 
 .profileImage:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(116, 185, 255, 0.6); }
+  70% { box-shadow: 0 0 0 20px rgba(116, 185, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(116, 185, 255, 0); }
+}
+
+@keyframes gradientMove {
+  0% { background: rgba(0, 0, 0, 0.3); }
+  100% { background: rgba(0, 0, 0, 0.5); }
+}
+
+/* Responsive */
 @media screen and (max-width: 768px) {
   .hero {
     padding: 60px 20px;
@@ -206,3 +259,4 @@
     height: 180px;
   }
 }
+  
