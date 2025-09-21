@@ -1,5 +1,10 @@
 import React from 'react';
 import styles from '../styles/components/Skills.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faCode, faServer, faDatabase, 
+  faTools, faPalette, faLaptopCode 
+} from '@fortawesome/free-solid-svg-icons';
 
 const Skills = () => {
   // Education data
