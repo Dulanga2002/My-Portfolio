@@ -15,12 +15,34 @@ const Home = () => {
       <main>
         <section id="home" className={styles.hero}>
           <div className={styles.heroContent}>
-            <h1>Dulanga Nikeshala</h1>
-            <h2>Software Developer</h2>
-            <p>Creating beautiful and functional web experiences</p>
-            <div className={styles.cta}>
-              <a href="#projects" className={styles.primaryButton}>View My Work</a>
-              <a href="#contact" className={styles.secondaryButton}>Contact Me</a>
+            <div className={styles.heroText}>
+              <div className={styles.roleTag}>Software Developer</div>
+              <h1 className={styles.heroTitle}>
+                Hi, I'm <span className={styles.nameHighlight}>Dulanga Nikeshala</span>
+              </h1>
+              <p className={styles.heroSubtitle}>
+                3rd-year BSc (Hons) IT & Management student from University of Moratuwa
+              </p>
+              <p className={styles.heroDescription}>
+                I build modern web applications and software solutions using React, JavaScript, 
+                and full-stack technologies. I enjoy solving real-world problems by combining 
+                clean code, innovative design, and user-centered development.
+              </p>
+              <div className={styles.heroButtons}>
+                <a href="#projects" className={styles.primaryButton}>
+                  View Projects
+                </a>
+                <a href="#contact" className={styles.secondaryButton}>
+                  Get In Touch
+                </a>
+              </div>
+            </div>
+            <div className={styles.heroImage}>
+              <img 
+                src="/src/assets/images/profile.png" 
+                alt="Dulanga Nikeshala" 
+                className={styles.profileImage}
+              />
             </div>
           </div>
         </section>

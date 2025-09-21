@@ -1,17 +1,25 @@
 .skills {
-  background-color: var(--white);
-  padding: var(--section-padding);
+  background-color: #f8fafc;
+  padding: 80px 0;
+  min-height: 100vh;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
 .title {
   text-align: center;
+<<<<<<< HEAD
   margin-bottom: 10px;
+=======
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 60px;
+>>>>>>> be1e16fb6105a3f8311ab8f20008c008a2f94eab
   position: relative;
   font-size: 2.5rem;
   color: var(--text-color);
@@ -30,14 +38,16 @@
 .title::after {
   content: '';
   position: absolute;
-  width: 60px;
-  height: 3px;
-  background-color: var(--primary-color);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
+  border-radius: 2px;
 }
 
+<<<<<<< HEAD
 .skillsContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
@@ -86,14 +96,41 @@
   margin-bottom: 20px;
   font-size: 0.95rem;
   padding-left: 50px;
+=======
+/* Education Section */
+.educationSection {
+  margin-bottom: 60px;
 }
 
-.skillsGrid {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+.sectionTitle {
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
 }
 
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  bottom: -8px;
+  left: 0;
+  border-radius: 2px;
+>>>>>>> be1e16fb6105a3f8311ab8f20008c008a2f94eab
+}
+
+.educationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+<<<<<<< HEAD
 .skillItem {
   background-color: var(--light-bg);
   padding: 15px 20px;
@@ -184,9 +221,197 @@
   .skillsContainer {
     grid-template-columns: 1fr;
   }
+=======
+.educationCard {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
+.educationCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+>>>>>>> be1e16fb6105a3f8311ab8f20008c008a2f94eab
+}
+
+.educationCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.educationType {
+  display: inline-block;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.degree {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.institution {
+  color: #64748b;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.period {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  margin-bottom: 6px;
+}
+
+.gpa, .results {
+  color: #059669;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+/* Skills Section */
+.skillsSection {
+  margin-bottom: 60px;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.skillCategory {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.skillCategory:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.categoryTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+.categoryIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.skillTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skillTag {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.skillTag:hover {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Achievements Section */
+.achievementsSection {
+  margin-bottom: 40px;
+}
+
+.achievementsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.achievementCard {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.achievementCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.achievementIcon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.achievementType {
+  color: #3b82f6;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.achievementTitle {
+  color: #1e293b;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.achievementDescription {
+  color: #64748b;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
 @media screen and (max-width: 768px) {
+<<<<<<< HEAD
   .skillCategory {
     padding: 20px;
   }
@@ -225,5 +450,55 @@
   .levelBadge {
     font-size: 0.65rem;
     padding: 2px 8px;
+=======
+  .skills {
+    padding: 60px 0;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .educationGrid, .skillsGrid, .achievementsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .educationCard, .skillCategory, .achievementCard {
+    padding: 20px;
+  }
+  
+  .categoryTitle {
+    font-size: 1rem;
+  }
+  
+  .skillTag {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 1.75rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.25rem;
+  }
+  
+  .educationCard, .skillCategory, .achievementCard {
+    padding: 15px;
+>>>>>>> be1e16fb6105a3f8311ab8f20008c008a2f94eab
   }
 }
