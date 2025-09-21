@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../styles/components/Header.module.css';
+import profileImage from '../assets/images/profile.png';
 import { Link } from 'react-scroll';
 
 const Header = () => {
@@ -12,7 +13,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <img src="/src/assets/images/profile.png" alt="Dulanga Nikeshala" className={styles.logoImage} />
+        <img src={profileImage} alt="Dulanga Nikeshala" className={styles.logoImage} />
         <h2>Dulanga Nikeshala</h2>
       </div>
       
