@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, useInView, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import styles from '../styles/components/Contact.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,6 +14,7 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  const [errors, setErrors] = useState({});
 
   // Animation variants
   const containerVariants = {
@@ -68,50 +69,79 @@ const Contact = () => {
     });
   };
 
+  // Basic client-side validation
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = 'Name is required';
+    if (!formData.email.trim()) newErrors.email = 'Email is required';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Invalid email';
+    if (!formData.subject.trim()) newErrors.subject = 'Subject is required';
+    if (!formData.message.trim()) newErrors.message = 'Message is required';
+    return newErrors;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const validation = validate();
+    if (Object.keys(validation).length > 0) {
+      setErrors(validation);
+      return;
+    }
+
+    setErrors({});
     setIsLoading(true);
 
     try {
-      // EmailJS configuration - these are safe to expose publicly
-      const serviceID = 'service_portfolio';
-      const templateID = 'template_contact';
-      const publicKey = 'portfolio_public_key';
+      // Use Vite environment variables for production/dev safety.
+      // Create a file named `.env` (not committed) with these values:
+      // VITE_EMAILJS_SERVICE_ID=your_service_id
+      // VITE_EMAILJS_TEMPLATE_ID=your_template_id
+      // VITE_EMAILJS_PUBLIC_KEY=your_public_key
+      const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_portfolio';
+      const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_contact';
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
 
-      // Alternative: Direct email sending to your Gmail
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
         subject: formData.subject,
-        message: formData.message,
-        to_email: 'dulanganikeshala2@gmail.com'
+        message: formData.message
       };
 
-      // For now, let's use a simple mailto approach as backup
-      const mailtoLink = `mailto:dulanganikeshala2@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-      )}`;
+      // If publicKey is provided, init the sdk (recommended)
+      if (publicKey) {
+        try {
+          emailjs.init(publicKey);
+        } catch (initErr) {
+          console.warn('EmailJS init warning:', initErr);
+        }
+      }
 
-      // Try EmailJS first, fallback to mailto
+      // Try EmailJS first
       try {
-        await emailjs.send(serviceID, templateID, templateParams, publicKey);
+        await emailjs.send(serviceID, templateID, templateParams);
         setSubmitted(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
       } catch (emailjsError) {
-        console.log('EmailJS failed, using mailto fallback');
+        console.error('EmailJS send failed:', emailjsError);
+        // Fallback to mailto
+        const to = import.meta.env.VITE_CONTACT_TO_EMAIL || 'dulanganikeshala2@gmail.com';
+        const mailtoLink = `mailto:${to}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+          `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        )}`;
         window.location.href = mailtoLink;
         setSubmitted(true);
       }
-      
     } catch (error) {
       console.error('Contact form error:', error);
-      // Fallback to mailto
-      const mailtoLink = `mailto:dulanganikeshala2@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      const to = import.meta.env.VITE_CONTACT_TO_EMAIL || 'dulanganikeshala2@gmail.com';
+      const mailtoLink = `mailto:${to}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
       )}`;
       window.location.href = mailtoLink;
+    } finally {
+      setIsLoading(false);
     }
-    
-    setIsLoading(false);
   };
 
   return (

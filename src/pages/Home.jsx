@@ -6,6 +6,9 @@ import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import profileImage from '../assets/images/profile.png';
+
+
 
 const Home = () => {
   return (
@@ -39,7 +42,7 @@ const Home = () => {
             </div>
             <div className={styles.heroImage}>
               <img 
-                src="/src/assets/images/profile.png" 
+                src={profileImage} 
                 alt="Dulanga Nikeshala" 
                 className={styles.profileImage}
               />
